@@ -13,6 +13,10 @@
   "author": "jesse lewis",
   "license": "UNLICENSED",
   "dependencies": {
-    "express": "^4.16.2"
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "nodemon": "^1.14.7",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0"
   }
 }
