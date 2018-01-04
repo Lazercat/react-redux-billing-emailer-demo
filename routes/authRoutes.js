@@ -19,7 +19,7 @@ module.exports = app => {
     res.send(req.user);
   });
 
-  app.get('/*', (req, res) => {
+  app.get('/', (req, res) => {
     res.send('howdy.');
   });
 };
