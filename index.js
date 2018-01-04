@@ -7,7 +7,7 @@ require('./models/User.js');
 require('./services/passport.js');
 
 //db configure
-mongoose.connect(keys.MONGO_URI);
+mongoose.connect(keys.mongoURI);
 
 //set app to express
 const app = express();
