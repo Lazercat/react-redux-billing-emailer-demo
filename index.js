@@ -23,9 +23,9 @@ app.use(passport.session());
 
 //include the express routes.
 require('./routes/authRoutes')(app);
-// app.get('*', (req, res) => {
-//   res.send('howdy. I am app.');
-// });
+app.get('*', (req, res) => {
+  res.send('howdy. I am app.');
+});
 
 //set port and run server
 const PORT = process.env.PORT || 5000;
