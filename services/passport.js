@@ -19,7 +19,8 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: keys.googleCallbackURL
+      callbackURL: keys.googleCallbackURL,
+      proxy: true
     },
     (accessToken, refreshToken, profile, done) => {
       // console.log('accessToken: ' + accessToken);
