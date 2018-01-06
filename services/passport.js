@@ -22,24 +22,15 @@ passport.use(
       callbackURL: keys.googleCallbackURL,
       proxy: true
     },
-    (accessToken, refreshToken, profile, done) => {
-      // console.log('accessToken: ' + accessToken);
-      // console.log('refreshToken: ' + refreshToken);
-      // console.log('profile: ' + JSON.stringify(profile));
-      User.findOne({ googleId: profile.id }).then(existingUser => {
-        if (existingUser) {
-          //we have a record
-          console.log('record found!' + existingUser);
-          done(null, existingUser);
-        } else {
-          //make new record
-          new User({ googleId: profile.id })
-            //save to mongodb
-            .save()
-            //close passport by calling done on user.
-            .then(user => done(null, user));
-        }
-      });
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await User.findOne({ googleId: profile.id });
+
+      if (existingUser) {
+        done(null, existingUser);
+      }
+
+      const user = await new User({ googleId: profile.id }).save();
+      done(null, user);
     }
   )
 );
