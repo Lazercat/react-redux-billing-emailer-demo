@@ -12,13 +12,16 @@ The overall app concept is a very basic implementation of a profile and credit b
 
 ## The stack and dependencies
 
--Full MERN (MongoDB, Express, React.js, & Node.js)
+-A Full MERN stack (MongoDB, Express, React.js, & Node.js)
 -Redux
+-redux thunk
+-axios
+-react-router
 -Stripe Billing Integration
 -Mongoose
 -Passport.js
 -Google oAuth 2.0
--concurrent
+-concurrent (FOR DEV)
 -nodemon
 
 ## App Status
