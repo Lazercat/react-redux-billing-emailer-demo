@@ -6,12 +6,16 @@
     "/auth/google": {
       "target": "http://localhost:5000"
     },
+    "/auth/google/callback": {
+      "target": "http://localhost:5000"
+    },
     "/api/*": {
       "target": "http://localhost:5000"
     }
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
     "materialize-css": "^0.100.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

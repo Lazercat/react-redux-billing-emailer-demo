@@ -1,4 +1,5 @@
 const passport = require('passport');
+const keys = require('../config/keys.js');
 
 module.exports = app => {
   app.get(
@@ -12,7 +13,8 @@ module.exports = app => {
     '/auth/google/callback',
     passport.authenticate('google'),
     (req, res) => {
-      res.redirect('/surveys');
+      //if we are on prod...
+      res.redirect(keys.hostKey + '/surveys');
     }
   );
 
