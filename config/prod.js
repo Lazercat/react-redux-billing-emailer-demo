@@ -6,5 +6,7 @@ module.exports = {
   googleCallbackURL: process.env.GOOGLE_CALLBACK_URL,
   mongoURI: process.env.MONGO_URI,
   cookieKey: process.env.COOKIE_KEY,
-  hostKey: process.env.HOST_KEY
+  hostKey: '',
+  stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+  stripeSecretKey: process.env.STRIPE_SECRET_KEY
 };

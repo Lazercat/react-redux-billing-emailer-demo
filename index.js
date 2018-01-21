@@ -13,6 +13,8 @@ mongoose.connect(keys.mongoURI);
 //set app to express
 const app = express();
 
+app.use(bodyParser.json());
+
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -24,9 +26,11 @@ app.use(passport.session());
 
 //include the express routes.
 require('./routes/authRoutes')(app);
-app.get('*', (req, res) => {
-  res.send('howdy. I am app.');
-});
+require('./routes/billingRoutes')(app);
+
+// app.get('*', (req, res) => {
+//   res.send('howdy. I am app.');
+// });
 
 //set port and run server
 const PORT = process.env.PORT || 5000;
