@@ -28,6 +28,16 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 
+if (process.env.NODE_ENV === 'production') {
+  //express will serve up production assets like our main.js or main.css file
+  app.use(express.static('client/build'));
+
+  //express will serve up index.html file when it doesnt know the route.
+  app.get('*', (req, res) => {
+    res.send(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
 // app.get('*', (req, res) => {
 //   res.send('howdy. I am app.');
 // });
